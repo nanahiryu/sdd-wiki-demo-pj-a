@@ -1,0 +1,21 @@
+# pj-a: docs/ 配下の変更を含む PR が main に merge されたら wiki-app に同期
+name: Sync Docs to Wiki
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
+    paths:
+      - "docs/**"
+
+jobs:
+  sync:
+    if: github.event.pull_request.merged == true
+    uses: nanahiryu/sdd-wiki-demo-wiki-app/.github/workflows/receive-docs.yml@main
+    with:
+      source-repo: sdd-wiki-demo-pj-a
+      docs-path: docs
+      dest-path: docs/pj-a
+    secrets:
+      APP_ID: ${{ secrets.APP_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
