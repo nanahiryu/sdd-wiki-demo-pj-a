@@ -14,8 +14,7 @@ jobs:
     uses: nanahiryu/sdd-wiki-demo-wiki-app/.github/workflows/receive-docs.yml@main
     with:
       source-repo: sdd-wiki-demo-pj-a
-      docs-path: docs
-      dest-path: docs/pj-a
+      mappings: '[{"docs-path": "docs", "dest-path": "docs/pj-a"}]'
     secrets:
       GH_APP_ID: ${{ secrets.GH_APP_ID }}
       GH_APP_PRIVATE_KEY: ${{ secrets.GH_APP_PRIVATE_KEY }}
