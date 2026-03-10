@@ -1,5 +1,7 @@
 # pj-a: Getting Started
 
+> wiki sync のテスト用に更新しました。
+
 pj-a のセットアップ手順です。
 
 ## インストール
